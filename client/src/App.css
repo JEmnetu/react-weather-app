@@ -1,0 +1,10 @@
+*{
+  margin:0;
+  padding: 0;
+}
+header{
+  background: rgba(20, 109, 242, 0.961);
+  height:40px;
+  width: 100%;
+  padding: 20px;
+}
