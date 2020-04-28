@@ -9,16 +9,16 @@ import Button from './components/Button';
 
 
 class App extends Component {
-  state = { city:undefined,
+  state = { city:'Baltimore',
             temp:undefined,
             humidity:undefined,
             windSpeed:undefined,
             icon:undefined,
             date:undefined            
 }
-//   componentDidMount(){
-//  this.getWeather()
-//   }
+  componentDidMount(){
+  this.getWeather()
+   }
   getWeather = async() =>{
     await Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`)
     .then(res=>{
