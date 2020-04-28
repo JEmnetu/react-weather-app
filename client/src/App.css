@@ -3,7 +3,7 @@
   padding: 0;
 }
 body{
-  background: blue;
+  background: rgba(20, 109, 242, 0.961);
 }
 header{
   background: white;
@@ -22,7 +22,8 @@ header{
   margin-top: 40px;
   text-align:center;
   padding: 30px;
-  background: rgba(20, 109, 242, 0.961);
+  background: blue;
+  
 }
 
 #weatherDiv h1{

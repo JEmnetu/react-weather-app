@@ -4,21 +4,23 @@ import './components/NavBar';
 import Axios from 'axios';
 import NavBar from './components/NavBar';
 import WeatherDiv from './components/WeatherDiv';
+import InputBox from './components/InputBox';
+import Button from './components/Button';
 
 
 class App extends Component {
-  state = { city:'Reisterstown',
+  state = { city:undefined,
             temp:undefined,
             humidity:undefined,
             windSpeed:undefined,
             icon:undefined,
             date:undefined            
 }
-  componentDidMount(){
-  this.getWeather();
-  }
+//   componentDidMount(){
+//  this.getWeather()
+//   }
   getWeather = async() =>{
-    await Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=reisterstown&units=imperial&appid=${process.env.REACT_APP_API_KEY}`)
+    await Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`)
     .then(res=>{
       console.log(res)
       //Format current date
@@ -36,21 +38,38 @@ class App extends Component {
       })
       
       
-      console.log(this.state)
+      //  console.log(this.state)
+     
    
     });
   }
+  // onchange = () =>{
+  //   console.log()
+  // }
   render() { 
     return ( 
       <div className="App">
-      <NavBar>JEH Weather App</NavBar>
-      <WeatherDiv city={this.state.city} 
-                  temp={this.state.temp}
-                  windSpeed={this.state.windSpeed}
-                  date={this.state.date}
-                  humidity={this.state.humidity}
-                  icon={this.state.icon}
-       />
+        <NavBar>JEH Weather App
+          <form onSubmit={(e)=>{
+            e.preventDefault();
+            // console.log(e.target[0].value)
+            this.setState({city:e.target[0].value}, ()=>{
+              this.getWeather();
+            });
+           
+            // this.getWeather();
+          }}>
+              <InputBox type='text' name='city'/>
+              <Button type='submit'>Submit</Button>
+            </form>
+        </NavBar>
+        <WeatherDiv city={this.state.city} 
+                    temp={this.state.temp}
+                    windSpeed={this.state.windSpeed}
+                    date={this.state.date}
+                    humidity={this.state.humidity}
+                    icon={this.state.icon}
+        />
 
                   
     </div>
