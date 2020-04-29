@@ -49,7 +49,9 @@ class App extends Component {
   render() { 
     return ( 
       <div className="App">
-        <NavBar>JEH Weather App
+        <NavBar>
+          <div id='nav-wrapper'>
+          <h2 id="main-heading">HabteJ Weather App</h2>
           <form onSubmit={(e)=>{
             e.preventDefault();
             // console.log(e.target[0].value)
@@ -62,6 +64,7 @@ class App extends Component {
               <InputBox type='text' name='city'/>
               <Button type='submit'>Submit</Button>
             </form>
+            </div>
         </NavBar>
         <WeatherDiv city={this.state.city} 
                     temp={this.state.temp}
