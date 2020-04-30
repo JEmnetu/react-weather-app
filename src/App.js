@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 import WeatherDiv from './components/WeatherDiv';
 import InputBox from './components/InputBox';
 import Button from './components/Button';
+import Forecast from './components/Forecast';
 
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
             icon:undefined,
             date:undefined            
 }
+  
   componentDidMount(){
   this.getWeather()
    }
@@ -73,6 +75,14 @@ class App extends Component {
                     humidity={this.state.humidity}
                     icon={this.state.icon}
         />
+
+        <Forecast>
+        {/* {list.map((l) =>{
+          return <Card>gkuy</Card>
+        } ) } */}
+       
+          
+        </Forecast>
 
                   
     </div>
