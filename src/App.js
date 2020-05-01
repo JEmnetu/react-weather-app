@@ -4,8 +4,7 @@ import './components/NavBar';
 import Axios from 'axios';
 import NavBar from './components/NavBar';
 import WeatherDiv from './components/WeatherDiv';
-import InputBox from './components/InputBox';
-import Button from './components/Button';
+
 import Forecast from './components/Forecast';
 
 
@@ -21,6 +20,7 @@ class App extends Component {
   componentDidMount(){
   this.getWeather()
    }
+
   getWeather = async() =>{
     await Axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`)
     .then(res=>{
@@ -39,51 +39,40 @@ class App extends Component {
         date:currentDate
       })
       
-      
-      //  console.log(this.state)
      
    
     });
   }
-  // onchange = () =>{
-  //   console.log()
-  // }
+
+  //onChange Function Console Log
+handleValue(e){
+  e.preventDefault();
+  e.persist();
+  let newCity = e.target[0].value;
+  this.setState({
+    city:newCity
+  }, ()=> console.log(this.state))
+}
+
   render() { 
     return ( 
       <div className="App">
-        <NavBar>
-          <div id='nav-wrapper'>
-          <h2 id="main-heading">HabteJ Weather App</h2>
-          <form onSubmit={(e)=>{
-            e.preventDefault();
-            // console.log(e.target[0].value)
-            this.setState({city:e.target[0].value}, ()=>{
-              this.getWeather();
-            });
-           
-            // this.getWeather();
-          }}>
-              <InputBox type='text' name='city'/>
-              <Button type='submit'>Submit</Button>
-            </form>
-            </div>
-        </NavBar>
+        <NavBar
+          changeText={this.handleValue.bind(this)}
+          weather={this.getWeather}
+        
+        />
+          
         <WeatherDiv city={this.state.city} 
                     temp={this.state.temp}
                     windSpeed={this.state.windSpeed}
                     date={this.state.date}
                     humidity={this.state.humidity}
                     icon={this.state.icon}
+                    
         />
 
-        <Forecast>
-        {/* {list.map((l) =>{
-          return <Card>gkuy</Card>
-        } ) } */}
        
-          
-        </Forecast>
-
                   
     </div>
      );

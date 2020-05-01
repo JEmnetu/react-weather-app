@@ -9,11 +9,8 @@ class Forecast extends Component {
         <div id="forecast-div">
             <h1>5 Day Forecast</h1>
                 <div id="card-group">
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
+                    {/* <Card/> */}
+                 
                 </div>
         </div> );
     }

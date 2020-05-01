@@ -2,7 +2,7 @@ import React from 'react';
 
 const WeatherDiv = (props) => {
     return ( 
-        <div id='weatherDiv'>
+        <div id='weatherDiv' style={{backgroundColor:'rgb(17, 73, 239)'}}>
             <h1>{props.city} {props.date}</h1>
             <ul id="currentForecast">
                 <li> <img alt='weather icon' src={'http://openweathermap.org/img/wn/' + props.icon + '@2x.png'}></img></li>
