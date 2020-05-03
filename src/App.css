@@ -24,6 +24,7 @@ header{
   text-align:center;
   padding: 30px;
   background: blue;
+  border-radius: 15px;
   
 }
 
@@ -90,3 +91,20 @@ header{
   margin-left: 1.8em;
 }
  */
+
+ .card{
+   height: 12em;
+   width: 10em;
+  
+ }
+
+ #cardWeatherIcon{
+   height:50px;
+   width: 50px;
+ }
+
+
+ .FC-Div{
+   margin-top:6em;
+   margin-bottom:3em;
+ }

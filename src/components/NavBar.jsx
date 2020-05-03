@@ -12,6 +12,7 @@ const NavBar = (props) => {
     <form onSubmit={props.changeText}>
         <InputBox type='text' name='city'/>
         <Button type='submit'>Search</Button>
+        
       </form>
       </div>
    );
