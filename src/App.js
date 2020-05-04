@@ -93,10 +93,10 @@ class App extends Component {
           icon={this.state.icon}
         />
 
-        <div className="container-fluid text-center FC-Div">
+        <div className="container text-center FC-Div">
           <h1>5-Day Forecast</h1>
           <h5>{this.state.city}</h5>
-          <div className="row d-flex justify-content-center">
+          <div className="row row-cols-1 row-cols-sm-1 row-cols-md-6 justify-content-center">
             {this.state.forecast.map(data => {
                //Format current date
       let rawDate = new Date(data.dt * 1000);

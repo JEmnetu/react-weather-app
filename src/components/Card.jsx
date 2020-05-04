@@ -2,8 +2,8 @@ import React from 'react';
 
 const Card = (props) => {
   return (
-    <div className=" mx-sm-1 my-sm-1ß col-md-2 col-xs-12">
-      <div className="card">
+    <div className="card col mx-2">
+      
         <div className="card-block">
           <div className="card-title">
             <h4>{props.date}</h4>
@@ -14,7 +14,7 @@ const Card = (props) => {
             <h5>{props.temp}&deg;F</h5>
           </div>
         </div>
-      </div>
+      
     </div>
   );
 };
