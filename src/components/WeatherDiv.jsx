@@ -4,7 +4,7 @@ const WeatherDiv = (props) => {
     return ( 
         <div className="container">
 
-        <div id='weatherDiv' style={{backgroundColor:'rgb(17, 73, 239)'}}>
+        <div id='weatherDiv' className='bg-primary'>
             <h1>{props.city} {props.date}</h1>
             <ul id="currentForecast">
                 <li> <img alt='weather icon' src={'http://openweathermap.org/img/wn/' + props.icon + '@2x.png'}></img></li>

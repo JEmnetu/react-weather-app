@@ -7,7 +7,7 @@ import Button from './Button';
 const NavBar = (props) => {
   return ( 
 
-    <div className="NavBar text-center">
+    <div className="NavBar bg-primary text-center">
     <h2>HabteJ Weather App</h2>
     <form onSubmit={props.changeText}>
         <InputBox type='text' name='city'/>

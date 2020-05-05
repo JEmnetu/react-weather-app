@@ -97,8 +97,11 @@ header{
  .card{
    height: auto;
    width: 10em;
+   
   
  }
+
+
 
  #cardWeatherIcon{
    height:50px;

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Card = (props) => {
   return (
-    <div className="card col mx-2">
+    <div className="card bg-primary col mx-2">
       
         <div className="card-block">
           <div className="card-title">
