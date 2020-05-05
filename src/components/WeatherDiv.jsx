@@ -2,6 +2,8 @@ import React from 'react';
 
 const WeatherDiv = (props) => {
     return ( 
+        <div className="container">
+
         <div id='weatherDiv' style={{backgroundColor:'rgb(17, 73, 239)'}}>
             <h1>{props.city} {props.date}</h1>
             <ul id="currentForecast">
@@ -10,6 +12,7 @@ const WeatherDiv = (props) => {
                 <li><h2>Humidity:{props.humidity}%</h2></li>
                 <li><h2>Wind: {props.windSpeed} mph</h2></li>
             </ul> 
+        </div>
         </div>
      );
 }
