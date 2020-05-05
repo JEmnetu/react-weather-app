@@ -29,7 +29,7 @@ class App extends Component {
     await Axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${this.state.city}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`
     ).then((res) => {
-      // console.log(res);
+      
       //Format current date
       let rawDate = new Date(res.data.sys.sunrise * 1000);
       let d = rawDate.getDate();
@@ -59,7 +59,7 @@ class App extends Component {
 
       this.setState({
         forecast: dailyData,
-      }, ()=> console.log(this.state.forecast));
+      });
     });
   };
 
